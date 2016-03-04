@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0739A23C-1D40-477F-AE7C-38518B499567}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OsmSharp.UI.Test</RootNamespace>
+    <AssemblyName>OsmSharp.UI.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\Debug\Any CPU\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\Output\Debug\Any CPU\OsmSharp.UI.Test.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Output\Release\Any CPU\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\Output\Release\Any CPU\OsmSharp.UI.Test.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>..\Output\Debug\x86\</OutputPath>
+    <DebugType>none</DebugType>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+    <DocumentationFile>..\Output\Debug\x86\OsmSharp.UI.Test.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>..\Output\Release\x86\</OutputPath>
+    <DebugType>none</DebugType>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+    <DocumentationFile>..\Output\Release\x86\OsmSharp.UI.Test.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\Output\Debug\x64\</OutputPath>
+    <DocumentationFile>..\Output\Debug\x64\OsmSharp.UI.Test.xml</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\Output\Release\x64\</OutputPath>
+    <DocumentationFile>..\Output\Release\x64\OsmSharp.UI.Test.xml</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr3.Runtime.PCL.3.5.0.3\lib\portable-win+net40+sl40+wp\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.0.5813.39032, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.0.1\lib\net40\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OsmSharp, Version=1.3.0.119, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OsmSharp.Core.1.3.0-rc1-0119\lib\net40\OsmSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OsmSharp.Osm, Version=1.3.0.119, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OsmSharp.Core.1.3.0-rc1-0119\lib\net40\OsmSharp.Osm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Zlib.Portable, Version=1.9.1.9000, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zlib.Portable.1.9.2\lib\portable-net4+sl4+wp71+win8\Zlib.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyVersion.cs">
+      <Link>Properties\SharedAssemblyVersion.cs</Link>
+    </Compile>
+    <Compile Include="Map\Styles\MapCSS\v0_2\MapCSSDomainParserTests.cs" />
+    <Compile Include="Map\Styles\MapCSS\v0_2\MapCSSInterpretationTests.cs" />
+    <Compile Include="Map\Styles\MapCSS\v0_2\MapCSSParserTests.cs" />
+    <Compile Include="Map\Styles\MapCSS\v0_2\Eval\MapCSSEvalTests.cs" />
+    <Compile Include="Map\Styles\Streams\StyleOsmStreamFilterTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderer\Matix2DTests.cs" />
+    <Compile Include="Renderer\Scene2DPrimitives\Storage\Scene2DPrimitivesSerializerTests.cs" />
+    <Compile Include="SimpleColorTests.cs" />
+    <Compile Include="UI\View2DTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="data\MapCSS\coloured-addresses.mapcss" />
+    <EmbeddedResource Include="data\MapCSS\default.mapcss" />
+    <EmbeddedResource Include="data\MapCSS\gisrussa.mapcss" />
+    <EmbeddedResource Include="data\MapCSS\Hide_nodes.mapcss" />
+    <EmbeddedResource Include="data\MapCSS\landuses.mapcss" />
+    <EmbeddedResource Include="data\MapCSS\oam-style.mapcss" />
+    <EmbeddedResource Include="data\MapCSS\opencyclemap.mapcss" />
+    <EmbeddedResource Include="data\MapCSS\openstreetinfo.mapcss" />
+    <EmbeddedResource Include="data\MapCSS\osmosnimki-hybrid.mapcss" />
+    <EmbeddedResource Include="data\MapCSS\potlatch2.mapcss" />
+    <EmbeddedResource Include="data\MapCSS\sport_styles.mapcss" />
+    <EmbeddedResource Include="data\MapCSS\trivial.mapcss" />
+    <EmbeddedResource Include="data\MapCSS\color-named.mapcss" />
+    <EmbeddedResource Include="data\MapCSS\color-short.mapcss" />
+    <EmbeddedResource Include="data\MapCSS\color.mapcss" />
+    <EmbeddedResource Include="data\MapCSS\test.mapcss" />
+    <EmbeddedResource Include="data\test.osm" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OsmSharp.UI\OsmSharp.UI.csproj">
+      <Project>{1524C255-2EE5-4C0C-A64C-56CE39A062E3}</Project>
+      <Name>OsmSharp.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+</Project>
