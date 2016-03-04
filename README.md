@@ -1,2 +1,2 @@
 # cautious
-A C# based application which displays predefined locationes 
+A C# based application which displays predefined locationes from a database. Therefore it using OpenStreetMaps.
