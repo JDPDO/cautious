@@ -10,7 +10,6 @@
             <MenuItem Cursor="None" Header="Ansicht"/>
             <MenuItem Cursor="None" Header="Info"/>
         </Menu>
-        <Button x:Name="button" Content="Neuer Eintrag" HorizontalAlignment="Left" Margin="10,277,0,0" VerticalAlignment="Top" Width="110" Click="button_Click" ContentStringFormat=""/>
         <ListView x:Name="listView" HorizontalAlignment="Left" Height="249" Margin="10,23,0,0" VerticalAlignment="Top" Width="110">
             <ListView.View>
                 <GridView>
