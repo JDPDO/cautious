@@ -19,7 +19,7 @@ namespace cautious
             this.Projection = new WebMercator();
         }
 
-        private static Stream stream = File.Open(@"osm\source\germany-latest.osm.pbf", FileMode.Open);
+        private static Stream stream = File.Open(@"cautious\osm\source\germany-latest.osm.pbf", FileMode.Open);
         MemoryDataSource dataSource = MemoryDataSource.CreateFromPBFStream(stream);
         MapCSSInterpreter interpreter = new MapCSSInterpreter("");
         Map map = new Map(new WebMercator());
