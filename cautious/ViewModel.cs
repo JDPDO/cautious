@@ -25,6 +25,9 @@ namespace ViewModel
         }
     }
 
+    /*
+     * Ein Objekt der Klasse Point stellt einen 
+     */
     public class Point : Base
     {
         private string name;
@@ -83,42 +86,6 @@ namespace ViewModel
                     Name = "Steinbake Leitdamm",
                     Location = new Location(53.51217, 8.16603)
                 });
-            Points.Add(
-                new Point
-                {
-                    Name = "Buhne 2",
-                    Location = new Location(53.50926, 8.15815)
-                });
-            Points.Add(
-                new Point
-                {
-                    Name = "Buhne 4",
-                    Location = new Location(53.50468, 8.15343)
-                });
-            Points.Add(
-                new Point
-                {
-                    Name = "Buhne 6",
-                    Location = new Location(53.50092, 8.15267)
-                });
-            Points.Add(
-                new Point
-                {
-                    Name = "Buhne 8",
-                    Location = new Location(53.49871, 8.15321)
-                });
-            Points.Add(
-                new Point
-                {
-                    Name = "Buhne 10",
-                    Location = new Location(53.49350, 8.15563)
-                });
-            Points.Add(
-                new Point
-                {
-                    Name = "Moving",
-                    Location = new Location(53.5, 8.25)
-                });
 
             Pushpins = new ObservableCollection<Point>();
             Pushpins.Add(
@@ -157,17 +124,17 @@ namespace ViewModel
             //        });
             //}
 
-            Polylines = new ObservableCollection<Polyline>();
-            Polylines.Add(
-                new Polyline
-                {
-                    Locations = LocationCollection.Parse("53.5140,8.1451 53.5123,8.1506 53.5156,8.1623 53.5276,8.1757 53.5491,8.1852 53.5495,8.1877 53.5426,8.1993 53.5184,8.2219 53.5182,8.2386 53.5195,8.2387")
-                });
-            Polylines.Add(
-                new Polyline
-                {
-                    Locations = LocationCollection.Parse("53.5978,8.1212 53.6018,8.1494 53.5859,8.1554 53.5852,8.1531 53.5841,8.1539 53.5802,8.1392 53.5826,8.1309 53.5867,8.1317 53.5978,8.1212")
-                });
+            //Polylines = new ObservableCollection<Polyline>();
+            //Polylines.Add(
+            //    new Polyline
+            //    {
+            //        Locations = LocationCollection.Parse("53.5140,8.1451 53.5123,8.1506 53.5156,8.1623 53.5276,8.1757 53.5491,8.1852 53.5495,8.1877 53.5426,8.1993 53.5184,8.2219 53.5182,8.2386 53.5195,8.2387")
+            //    });
+            //Polylines.Add(
+            //    new Polyline
+            //    {
+            //        Locations = LocationCollection.Parse("53.5978,8.1212 53.6018,8.1494 53.5859,8.1554 53.5852,8.1531 53.5841,8.1539 53.5802,8.1392 53.5826,8.1309 53.5867,8.1317 53.5978,8.1212")
+            //    });
 
             var timer = new DispatcherTimer
             {
