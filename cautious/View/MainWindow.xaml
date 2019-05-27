@@ -124,7 +124,6 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <!--Border HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#7FFFFFFF">
@@ -135,7 +134,7 @@
                  TileLayer="{StaticResource OpenStreetMap}"
                  MouseLeftButtonDown="MapMouseLeftButtonDown" MouseRightButtonDown="MapMouseRightButtonDown"
                  MouseMove="MapMouseMove" MouseLeave="MapMouseLeave"
-                 ManipulationInertiaStarting="MapManipulationInertiaStarting" Margin="0,20,0,0">
+                 ManipulationInertiaStarting="MapManipulationInertiaStarting" Margin="0,20,0,0" Grid.RowSpan="2">
 
             <!--map:MapGraticule Opacity="0.6"/-->
             <!--map:MapScale Margin="4" Opacity="0.8" HorizontalAlignment="Left" Background="Transparent"/-->
@@ -173,34 +172,18 @@
         </map:Map>
 
         <!--OSM Informationszeile-->
-        <Border HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#7FFFFFFF">
+        <Border HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#7FFFFFFF" Height="17" Width="171">
             <TextBlock Margin="2" FontSize="10" map:HyperlinkText.InlinesSource="{Binding TileLayer.Description, ElementName=map}"/>
         </Border>
 
-        <!--Mapoptionen-->
-        <Grid Margin="680,52,0,0">
-            <Grid.ColumnDefinitions>
-                <!--<ColumnDefinition Width="35*"/>
-                <ColumnDefinition Width="67*"/>-->
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
+        <!--Zeigt aktuelle Mausposition-->
+        <TextBlock x:Name="mouseLocation" Margin="0,10,0,22" FontFamily="Segoe UI Mono" HorizontalAlignment="Right" Width="68" Grid.Row="1" Height="34" VerticalAlignment="Center"/>
 
-            <!--Zeigt aktuelle Mausposition-->
-            <TextBlock x:Name="mouseLocation" Margin="25,0,10,10" VerticalAlignment="Bottom" FontFamily="Segoe UI Mono" Grid.ColumnSpan="2" Height="34"/>
-
-            <!--Ermöglicht Vergrößerung einzustellen-->
-            <StackPanel HorizontalAlignment="Right" Width="97" Grid.ColumnSpan="2" Margin="0,10,10,454">
-                <TextBlock Text="Vergrößerung" Margin="0,0,0,2" HorizontalAlignment="Center" Foreground="Black" FontSize="10"/>
-                <Slider ToolTip="Zoom Level" Width="100" VerticalAlignment="Center" SmallChange="0.01"
-                		Minimum="{Binding MinZoomLevel, ElementName=map}"
-                		Maximum="{Binding MaxZoomLevel, ElementName=map}"
-                		Value="{Binding TargetZoomLevel, ElementName=map}"/>
-            </StackPanel>
-
-        </Grid>
+        <!--Ermöglicht Vergrößerung einzustellen-->
+        <!--StackPanel Margin="100,10,1,31"-->
 
         <!--Menüleiste-->
-        <Menu x:Name="menu" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width= "Auto">
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width= "792">
             <MenuItem Header="Datei"/>
             <MenuItem Header="Bearbeiten"/>
             <MenuItem Header="Info">
@@ -210,8 +193,15 @@
         </Menu>
 
         <!--Suchleiste-->
-        <Button Content="Suche" HorizontalAlignment="Left" Height="22" Margin="710,25,0,0" VerticalAlignment="Top" Width="72" Click="Button_Click"/>
+        <Button Content="Suche" Height="22" Margin="0,25,10,0" VerticalAlignment="Top" Click="Button_Click" HorizontalAlignment="Right" Width="72"/>
 
-        <TextBox Name="Suchbar" Height="22" Width="695" Margin="10,25,86,522" AcceptsReturn="False" Text="Gutachter, Adresse oder Ort suchen" TextChanged="TextBox_TextChanged" />
+        <TextBox Name="Suchbar" Height="22" Margin="10,25,100,0" AcceptsReturn="False" Text="Gutachter, Adresse oder Ort suchen" TextChanged="TextBox_TextChanged" VerticalAlignment="Top" />
+        <Grid Height="34" HorizontalAlignment="Right" Width="126" Margin="0,68,10,0" VerticalAlignment="Top">
+            <TextBlock Text="Vergrößerung" Margin="20,0,19,19" HorizontalAlignment="Center" Foreground="Black" FontSize="10"/>
+            <Slider ToolTip="Zoom Level" Width="100" VerticalAlignment="Center" SmallChange="0.01"
+                        Minimum="{Binding MinZoomLevel, ElementName=map}"
+                        Maximum="{Binding MaxZoomLevel, ElementName=map}"
+                        Value="{Binding TargetZoomLevel, ElementName=map}" Margin="0,15,0,0"/>
+        </Grid>
     </Grid>
 </Window>

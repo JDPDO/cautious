@@ -4,6 +4,8 @@ using System.Windows;
 using System.Windows.Input;
 using MapControl;
 using cautious.windows;
+using Mapsui.UI.Wpf;
+using cautious.Model.DB;
 
 namespace LocationToVisibilityConverter
 {
@@ -101,6 +103,7 @@ namespace LocationToVisibilityConverter
         {
 
         }
+
         private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e) { }
     }
 }

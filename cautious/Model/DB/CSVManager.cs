@@ -48,7 +48,6 @@ namespace cautious.Model.DB
             csv = new CsvReader(sr);
 
             var records = csv.GetRecords<dynamic>();
-            records.get
         }
 
 
@@ -67,7 +66,7 @@ namespace cautious.Model.DB
                 csv.Configuration.HasHeaderRecord = true;
                 while (csv.Read())
                 {
-                    for (int i = 0; csv.trTryGetField<string>(i, out value); i++)
+                    for (int i = 0; csv.TryGetField<string>(i, out value); i++)
                     {
                         result.Add(value);
                     }
